@@ -25,9 +25,10 @@ echo "請選擇模型來源："
 echo ""
 echo "1) OpenRouter（推薦，最穩）"
 echo "2) Gemini API（需 fork 已支援 Gemini provider）"
+echo "3) ChatGPT API (OpenAI)"
 echo ""
 
-read -p "請輸入選項 [1-2]: " PROVIDER_CHOICE
+read -p "請輸入選項 [1-3]: " PROVIDER_CHOICE
 
 if [ "$PROVIDER_CHOICE" = "1" ]; then
 
@@ -51,6 +52,17 @@ elif [ "$PROVIDER_CHOICE" = "2" ]; then
     echo ""
 
     MODEL_PROVIDER="gemini/gemini-2.5-pro"
+
+elif [ "$PROVIDER_CHOICE" = "3" ]; then
+
+    echo ""
+    echo "🔑 請輸入 OpenAI API Key"
+    echo ""
+
+    read -s -p "OPENAI_API_KEY: " OPENAI_API_KEY
+    echo ""
+
+    MODEL_PROVIDER="openai/gpt-4o"
 
 else
     echo "❌ 無效選項"
@@ -100,12 +112,30 @@ PROVIDER_MAX_CONCURRENCY=3
 HTTP_READ_TIMEOUT=120
 EOF
 
-else
+elif [ "$PROVIDER_CHOICE" = "2" ]; then
 
 cat > .env <<EOF
 ANTHROPIC_AUTH_TOKEN="$AUTH_TOKEN"
 
 GEMINI_API_KEY="$GEMINI_API_KEY"
+
+MODEL="$MODEL_PROVIDER"
+
+ENABLE_MODEL_THINKING=true
+
+PROVIDER_RATE_LIMIT=1
+PROVIDER_RATE_WINDOW=3
+PROVIDER_MAX_CONCURRENCY=3
+
+HTTP_READ_TIMEOUT=120
+EOF
+
+else
+
+cat > .env <<EOF
+ANTHROPIC_AUTH_TOKEN="$AUTH_TOKEN"
+
+OPENAI_API_KEY="$OPENAI_API_KEY"
 
 MODEL="$MODEL_PROVIDER"
 
