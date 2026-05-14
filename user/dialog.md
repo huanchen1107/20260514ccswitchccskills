@@ -445,3 +445,23 @@ PROVIDER_MAX_CONCURRENCY=10
 
 ---
 
+---
+
+---
+
+### 🤖 AI (2026-05-14T13:15:18Z)
+
+The session has been successfully synchronized and backed up to GitHub. Here is the summary of the final adjustments regarding your rate limit questions:
+
+### # 6.0 Rate Limit Optimization & Session End
+
+#### ## 6.1 "Infinite" vs. Proper Settings
+*   **Can you set it to infinite?** Technically yes (by setting a very high number), but **practically no**.
+    *   The `PROVIDER_RATE_LIMIT` in `freecc.sh` is a "Proactive Limiter" designed to prevent you from sending requests faster than your provider allows.
+    *   If you set it to infinite, you will simply hit Google's server-side block immediately, resulting in a **429 Rate Limit Error** and potentially a 60-second "Reactive Block" where the proxy pauses everything.
+*   **The "Maximum Free" Setting**: For the **Google AI Studio Free Tier**, the limit is strictly **15 RPM** (Requests Per Minute). I have configured your script to use `15` as the safe maximum.
+*   **How to use "Freely without Charge"**:
+<truncated 936 bytes>
+
+---
+
