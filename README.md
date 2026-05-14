@@ -1,4 +1,4 @@
-# CC Switch & Claude Code Project
+# 2026.5.15 Freecc4ccSkillsProjectTemplate
 
 This project repository contains the setup and scripts for running **Claude Code** integrated with **CC Switch** to route API requests to alternative providers like **DeepSeek** via **OpenRouter**, while maintaining a clean, automated project management workflow.
 
@@ -20,8 +20,8 @@ Throughout this session, the following tasks were accomplished to set up and con
 - **Task 4.1**: Confirmed the successful generation of `.claude/skills` directory and OpenSpec commands.
 
 ### Repository & Workflow Management
-- **Task 4.2**: Initialized a local Git repository, linked it to the remote `https://github.com/huanchen1107/20260514ccSwitchccSkills.git`, and pushed the initial setup to the `main` branch.
-- **Task 5.1**: Executed `./startup.sh` to trigger the PM workflow. Successfully generated the daily development log (`2026.05.14開發日誌.md`) and the first tutorial file (`Tutorial/Tutorial_1.md`).
+- **Task 4.2**: Initialized a local Git repository, linked it to the remote `https://github.com/huanchen1107/2026.5.15-Freecc4ccSkillsProjectTemplate.git`, and pushed the initial setup to the `main` branch.
+- **Task 5.1**: Executed `./startup.sh` to trigger the PM workflow. Successfully generated the daily development log (`2026.05.15開發日誌.md`) and the first tutorial file (`Tutorial/Tutorial_1.md`).
 
 ### Pivot to Native Claude Code
 - **Task 6.1**: Based on user preference, completely removed the OpenSpec framework from the project (deleted `.claude` and `openspec` directories) to rely on the native Claude Code interface. These changes were committed and synced to GitHub. The global OpenSpec package was also subsequently uninstalled.
