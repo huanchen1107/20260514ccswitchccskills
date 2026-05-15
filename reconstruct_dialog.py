@@ -29,6 +29,16 @@ for line in lines:
         source = entry.get("source")
         content = entry.get("content", "")
         
+        # Redact sensitive keys
+        import re
+        patterns = [
+            (r'sk-or-v1-[a-f0-9]{64}', '[REDACTED_OPENROUTER_KEY]'),
+            (r'sk-proj-[a-zA-Z0-9_-]{100,}', '[REDACTED_OPENAI_KEY]'),
+            (r'AIzaSy[a-zA-Z0-9_-]{33}', '[REDACTED_GEMINI_KEY]')
+        ]
+        for pattern, replacement in patterns:
+            content = re.sub(pattern, replacement, content)
+
         if source == "USER_EXPLICIT":
             if "<USER_REQUEST>" in content:
                 content = content.split("<USER_REQUEST>")[1].split("</USER_REQUEST>")[0].strip()
