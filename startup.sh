@@ -13,3 +13,15 @@ if [ -f "project_initial.md" ]; then
 else
     echo "❌ 找不到 project_initial.md，請確認檔案是否存在。"
 fi
+
+echo ""
+echo "========================================="
+echo "🤖 啟動 Claude Code..."
+echo "========================================="
+
+# Run the unified Claude Code launcher
+if [ -f "cc.sh" ]; then
+    bash cc.sh
+else
+    echo "❌ 找不到 cc.sh，請確認檔案是否存在。"
+fi
