@@ -13,12 +13,19 @@ fi
 export ANTHROPIC_BASE_URL="https://openrouter.ai/api/v1"
 export ANTHROPIC_AUTH_TOKEN="freecc"
 
-# 3. Execution
+# 3. Handle default model (OpenRouter requires specific IDs)
+ARGS="$@"
+if [[ "$*" != *"--model"* ]]; then
+    # Defaulting to Sonnet 3.5 which is the best for coding
+    ARGS="--model anthropic/claude-3.5-sonnet $ARGS"
+fi
+
+# 4. Execution
 echo "========================================="
 echo "🤖 Native Claude Code Launcher"
 echo "========================================="
 echo "📍 Gateway: $ANTHROPIC_BASE_URL"
-echo "🔑 Auth: (Using ANTHROPIC_AUTH_TOKEN=freecc)"
+echo "📦 Default Model: anthropic/claude-3.5-sonnet"
 echo "-----------------------------------------"
 
-claude "$@"
+claude $ARGS
