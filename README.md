@@ -1,5 +1,9 @@
 # 2026.5.15 Freecc4ccSkillsProjectTemplate
 
+> **⚠️ MEMO (2026-05-15)**: CC Switch is currently **not working**. Do not use it.
+> This project runs exclusively via the **`free-claude-code` local proxy** with API keys configured in `.env`.
+> Simply run `./cc.sh` to start.
+
 A **unified Claude Code launcher** that routes AI requests through the `free-claude-code` local proxy to OpenRouter free-tier models — enabling zero-cost agentic AI coding with a one-command startup.
 
 ## 🚀 Quick Start
