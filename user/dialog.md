@@ -725,3 +725,59 @@ help me to do that
 
 ---
 
+---
+
+---
+
+### 🤖 AI (2026-05-15T01:13:56Z)
+
+I have created a dedicated launcher script to help you connect Claude Code to your CC Switch configuration effortlessly.
+
+### # 10.0 Native CC Switch Launcher: `cc.sh`
+
+Instead of manually setting environment variables every time, you can now use the new `cc.sh` script I've added to your project root.
+
+#### How to use it:
+1.  **Open your terminal** in the project folder.
+2.  **Run the launcher**:
+    ```bash
+    ./cc.sh
+    ```
+3.  This script will automatically:
+    *   Load your API keys from `.env`.
+    *   Set the `ANTHROPIC_BASE_URL` to OpenRouter (default).
+    *   Set the `ANTHROPIC_AUTH_TOKEN` to a dummy value to bypass login.
+    *   Start **Claude Code** for you.
+
+#### Customizing for CC Switch Desktop:
+If your CC Switch desktop app provides a local proxy address (like `http://localhost:18080`), you can easily update the script:
+1.  Open [cc.sh](file:///Users/huango/Desktop/Projects/2026.5.15-Freecc4ccSkillsProjectTemplate/cc.sh).
+<truncated 532 bytes>
+
+---
+
+### 👤 User (2026-05-15T01:16:13Z)
+
+check again
+
+---
+
+### 👤 User (2026-05-15T01:14:20Z)
+
+The USER performed the following action:
+Command: claude./cc.sh
+CWD: /Users/huango/Desktop/Projects/2026.5.15-Freecc4ccSkillsProjectTemplate
+
+				The command failed with exit code: 127
+				Output:
+				zsh: no such file or directory: claude./cc.sh
+
+
+---
+
+---
+
+---
+
+---
+
